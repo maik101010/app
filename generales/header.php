@@ -8,8 +8,8 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect " style="background-color: rgb(69, 65, 78)!important"> 
-          <a href="#overview" class="mdl-layout__tab is-active">Inicio</a>
-          <a href="#features" class="mdl-layout__tab">Buscar</a>
+          <a href="index.php" class="mdl-layout__tab">Inicio</a>
+          <a href="buscar.php" class="mdl-layout__tab">Buscar</a>
           <!-- <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a> -->

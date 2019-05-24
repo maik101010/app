@@ -12,7 +12,7 @@ class Consultas
 	public function getPersons($value='')
 	{
 		//$conexion = new Conexion(); 
-		$query = "select persona.nombre, persona.cargo, persona.codigo_postal, persona.direccion_oficina, ciudad.nombre as ciudad, ciudad.id_ciudad  
+		$query = "select persona.id_persona, persona.nombre, persona.cargo, persona.codigo_postal, persona.direccion_oficina, ciudad.nombre as ciudad, ciudad.id_ciudad  
 		from persona inner join ciudad on ciudad.id_ciudad = persona.ciudad_id order by persona.codigo_postal";
 		//$result = $conexion->getConexion()->prepare($query);
 		$stament = Conexion::getConexion()->prepare($query);
@@ -27,6 +27,35 @@ class Consultas
 
 		return $arr;
 	}
+
+
+	/**
+	 * Obtenemos una persona por medio del id
+	 * @param  int $id [id de la persona]
+	 * @return [arr]  [arreglo de la persona]
+	 */
+	public function getPersonId($id)
+	{
+		$query = "select * from persona where id_persona = ".$id;
+		//$result = $conexion->getConexion()->prepare($query);
+		$stament = Conexion::getConexion()->prepare($query);
+		// $res = Conexion::getConexion()->query('select * from persona where id_persona = '.$id, PDO::FETCH_ASSOC);
+		// var_dump($res);
+		$stament->execute();
+		$resultados = $stament->fetchAll(PDO::FETCH_ASSOC);		
+
+
+		$arr = [];
+		$i=0;
+		foreach ($resultados as $row) {
+		 //	echo $row["nombre"];
+		 	$arr[$i] = $row;
+		 	//$i++;
+		}
+
+		return $arr;
+	}
+
 
 	/**
 	 * obtenemos todas las ciudades en un arreglo, retornamos el arreglo
@@ -99,7 +128,7 @@ class Consultas
 	public function searchPerson($codigoPostal)
 	{
 		//$query = "select * from persona where codigo_postal like '".$codigoPostal."%'";
-		$query = "select persona.nombre, persona.cargo, persona.codigo_postal, persona.direccion_oficina, ciudad.nombre as ciudad, ciudad.id_ciudad  
+		$query = "select persona.id_persona, persona.nombre, persona.cargo, persona.codigo_postal, persona.direccion_oficina, ciudad.nombre as ciudad, ciudad.id_ciudad  
 		from persona inner join ciudad on ciudad.id_ciudad = persona.ciudad_id
 		where codigo_postal like '".$codigoPostal."%'";
 		//$result = $conexion->getConexion()->prepare($query);
@@ -117,10 +146,13 @@ class Consultas
 	}
 	
 }
-/*$objeto = new Consultas;
-$resultado = $objeto->getPersons();
-//$count = count($resultado);
+// $objeto = new Consultas;
 
+// //$resultado = 
+// $objeto->getPersonId(1);
+//var_dump($resultado);
+//$count = count($resultado);
+/*
 foreach ($resultado as $row) {
 	echo $row['nombre'] . "<br>";
     echo $row['cargo'] . "<br>";

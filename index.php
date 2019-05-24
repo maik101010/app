@@ -49,7 +49,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <?php include 'generales/header.php'; ?>
       <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
+        <div class="" id="overview">
          <!--  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
               <i class="material-icons">play_circle_filled</i>
@@ -144,24 +144,6 @@
             <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
               <h5>Lorem ipsum dolor sit amet</h5>
               Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-            </div>
-          </section>
-        </div>
-        <div class="mdl-layout__tab-panel" id="features">
-          <section class="section--center mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--12-col">
-              <!-- Simple Textfield -->
-              <h3 class="my-4 heading  text-center">Formulario Busqueda</h3>
-              <form action="Controlador.php" method="post">
-                <div class="mdl-textfield mdl-js-textfield">
-                  <input class="mdl-textfield__input" type="text" id="codigo_postal" name="codigo_postal">
-                  <label class="mdl-textfield__label" for="sample1">Código postal</label>
-                </div>
-                 <!-- Flat button with ripple -->
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect" type="submit">
-                  Buscar
-                </button>
-              </form>
             </div>
           </section>
         </div>
